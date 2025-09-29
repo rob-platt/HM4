@@ -47,7 +47,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ghcr.io/rob-platt/pixel_classifier
+          images: ghcr.io/rob-platt/HM4
           tags: latest
       
       - name: Build and push Docker image
