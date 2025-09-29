@@ -1,0 +1,59 @@
+name: ci
+on: [push]
+
+jobs:
+  qa:
+      runs-on: ubuntu-latest
+      steps:
+          - uses: actions/checkout@v5
+
+          - name: Set up Python 
+            uses: actions/setup-python@v5
+            with: 
+              python-version: "3.11"
+          
+          - name: Install uv
+            uses: astral-sh/setup-uv@v6
+            with: 
+              enable-cache: true
+
+          - name: Install the project
+            run: uv sync --locked --all-extras --dev
+
+          - name: Test with pytest
+            run: |
+              python -m pytest
+
+  publish:
+    if: github.ref == 'refs/heads/master'
+    needs: qa
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Log into the Container registry
+        uses: docker/login-action@v3
+        with: 
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Docker Metadata
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ghcr.io/rob-platt/pixel_classifier
+          tags: latest
+      
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
