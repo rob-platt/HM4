@@ -767,7 +767,6 @@ dependencies = [
     { name = "torch" },
     { name = "torchmetrics" },
     { name = "tqdm" },
-    { name = "triton" },
     { name = "umap-learn" },
 ]
 
@@ -827,7 +826,6 @@ requires-dist = [
     { name = "torch", specifier = ">=2.3.1" },
     { name = "torchmetrics", specifier = ">=1.4.0.post0" },
     { name = "tqdm", specifier = ">=4.66.4" },
-    { name = "triton", specifier = ">=2.3.1" },
     { name = "umap-learn", specifier = ">=0.5.5" },
 ]
 
@@ -2390,28 +2388,6 @@ wheels = [
 ]
 
 [[package]]
-name = "ray"
-version = "2.24.0"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "aiosignal" },
-    { name = "click" },
-    { name = "filelock" },
-    { name = "frozenlist" },
-    { name = "jsonschema" },
-    { name = "msgpack" },
-    { name = "packaging" },
-    { name = "protobuf" },
-    { name = "pyyaml" },
-    { name = "requests" },
-]
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/1f/da/9131a8eed7ca62d0d17f99bc4dd713f0cdbd017d62a8e7fba25e1f0f992a/ray-2.24.0-cp311-cp311-macosx_10_15_x86_64.whl", hash = "sha256:478aaf3b1f624063c4a0b7bc3caef2822b9e095a84931077228fd54f1e5dba31", size = 67015214, upload-time = "2024-06-06T18:14:13.17Z" },
-    { url = "https://files.pythonhosted.org/packages/1c/a8/148d6eae6083dcc3d9cb45eae2457e0821497f3758af3ff6f85ea53f1699/ray-2.24.0-cp311-cp311-macosx_11_0_arm64.whl", hash = "sha256:c7952d45a0d369642e588842dc27d473ee77867e4aaf8d3689e12eba52af7752", size = 64459952, upload-time = "2024-06-06T18:14:20.833Z" },
-    { url = "https://files.pythonhosted.org/packages/d7/37/7480de9ce68faf12d67360892d856ad4e2a140dd60768f68bcacfb4ef924/ray-2.24.0-cp311-cp311-manylinux2014_x86_64.whl", hash = "sha256:7195f4ae30a07f21aa00cf7d945648ed6968b63ca4b02a5bdc7fc30853f49410", size = 66372208, upload-time = "2024-06-06T18:14:30.873Z" },
-]
-
-[[package]]
 name = "referencing"
 version = "0.35.1"
 source = { registry = "https://pypi.org/simple" }
@@ -2771,7 +2747,6 @@ dependencies = [
     { name = "nvidia-nccl-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
     { name = "nvidia-nvtx-cu12", marker = "platform_machine == 'x86_64' and sys_platform == 'linux'" },
     { name = "sympy" },
-    { name = "triton", marker = "python_full_version < '3.12' and platform_machine == 'x86_64' and sys_platform == 'linux'" },
     { name = "typing-extensions" },
 ]
 wheels = [
@@ -2849,18 +2824,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/8a/71/0578e44d2110f93c2136eb705f5b11e706e1e8ea3acaaaeac043bd40d8fd/traittypes-0.2.1.tar.gz", hash = "sha256:be6fa26294733e7489822ded4ae25da5b4824a8a7a0e0c2dccfde596e3489bd6", size = 13544, upload-time = "2018-06-16T07:34:00.929Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/9c/d1/8d5bd662703cc1764d986f6908a608777305946fa634d34c470cd4a1e729/traittypes-0.2.1-py2.py3-none-any.whl", hash = "sha256:1340af133810b6eee1a2eb2e988f862b0d12b6c2d16f282aaf3207b782134c2e", size = 8550, upload-time = "2018-06-16T07:33:59.594Z" },
-]
-
-[[package]]
-name = "triton"
-version = "2.3.1"
-source = { registry = "https://pypi.org/simple" }
-dependencies = [
-    { name = "filelock" },
-]
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/64/16/956b7b9d2ed3a437a1a06792b2ae2e3c49147296ba2f4d59fcee376ded8f/triton-2.3.1-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:c9d64ae33bcb3a7a18081e3a746e8cf87ca8623ca13d2c362413ce7a486f893e", size = 168079264, upload-time = "2024-05-27T21:44:29.074Z" },
-    { url = "https://files.pythonhosted.org/packages/ea/a4/e66cbd7befaf44a84cfb367b00a0331735cd56d4b2076533dec9b0b255fe/triton-2.3.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:eaf80e8761a9e3498aa92e7bf83a085b31959c61f5e8ac14eedd018df6fccd10", size = 168090656, upload-time = "2024-05-27T21:44:37.815Z" },
 ]
 
 [[package]]
