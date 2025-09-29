@@ -25,7 +25,7 @@ jobs:
               uv run pytest
 
   publish:
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main'
     needs: qa
     runs-on: ubuntu-latest
     permissions:
