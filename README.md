@@ -12,7 +12,7 @@ The code offers the following functionality:
 * Visualise denoised results
 
 #### Example classification
-![The Western Fan of Jezero Crater as classified by HM4](https://github.com/rob-platt/HM4/tree/main/data/HRL_example_image.png?raw=true)
+![The Western Fan of Jezero Crater as classified by HM4](https://github.com/rob-platt/HM4/blob/main/data/HRL_example_image.png?raw=true)
 
 ## CAML
 
